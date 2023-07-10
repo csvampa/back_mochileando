@@ -27,21 +27,33 @@
 //       message => alert(message)
 //     );
 // }
+function save_formulario() {
 
-var options = {
-  body: JSON.stringify(producto), // Convertir el objeto a una cadena JSON
-  method: "POST", // Establecer el método HTTP como POST
-  headers: { "Content-Type": "application/json" },
-  redirect: "follow",
-};
+  let formulario = {
+    nombre: this.nombre,
+    apellido: this.apelido,
+    mail: this.mail,
+    asunto: this.asunto,
+    mensaje: this.mensaje,
+  };
 
-// Realizar una solicitud fetch para guardar el producto en el servidor
-fetch(this.url, options)
-  .then(function () {
-    alert("Registro grabado!");
-    window.location.href = "./productos.html"; // Redirigir a la página de productos
-  })
-  .catch((err) => {
-    console.error(err);
-    alert("Error al Grabar.");
-  });
+  // Configurar las opciones para la solicitud fetch
+  var options = {
+    body: JSON.stringify(formulario), // Convertir el objeto a una cadena JSON
+    method: "POST", // Establecer el método HTTP como POST
+    headers: { "Content-Type": "application/json" },
+    redirect: "follow",
+    url: "http://localhost:5000/contacto"
+  };
+
+  // Realizar una solicitud fetch para guardar el producto en el servidor
+  fetch(this.url, options)
+    .then(function () {
+      alert("Registro grabado!");
+      window.location.href = "./contacto.html"; // Redirigir a la página de productos
+    })
+    .catch((err) => {
+      console.error(err);
+      alert("Error al Grabar.");
+    });
+  }
