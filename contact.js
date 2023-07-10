@@ -27,34 +27,23 @@
 //       message => alert(message)
 //     );
 // }
-fetch('http://localhost:5000/contacto')
-  .then((response) => response.json())
-    
-function save_formulario() {
-      let formulario = {
-        nombre: this.nombre,
-        apellido: this.apelido,
-        mail: this.mail,
-        asunto: this.asunto,
-        mensaje: this.mensaje,
-      };
+ 
+const url = 'http://localhost:5000/contacto';
+const data = {
+  nombre: document.getElementById('fname').value,
+  apellido: document.getElementById('fapell').value,
+  mail: document.getElementById('fmail').value,
+  asunto: document.getElementById('fasunto').value,
+  mensaje: document.getElementById('fmsg').value,
+};
 
-      // Configurar las opciones para la solicitud fetch
-      var options = {
-        body: JSON.stringify(formulario), // Convertir el objeto a una cadena JSON
-        method: "POST", // Establecer el método HTTP como POST
-        headers: { "Content-Type": "application/json" },
-        redirect: "follow",
-      };
+const requestOptions = {
+  method: 'POST',
+  headers: { 'Content-Type': 'application/json' },
+  body: JSON.stringify(data)
+};
 
-      // Realizar una solicitud fetch para guardar el producto en el servidor
-      fetch(this.url, options)
-        .then(function () {
-          alert("Registro grabado!");
-          window.location.href = "./contacto.html"; // Redirigir a la página de productos
-        })
-        .catch((err) => {
-          console.error(err);
-          alert("Error al Grabar.");
-        });
-      }
+fetch(url, requestOptions)
+  .then(response => response.json())
+  .then(data => console.log(data))
+  .catch(error => console.log('Error:', error));
