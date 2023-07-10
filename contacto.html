@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styleContacto.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Roboto&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="icon" type="img" href="/assets/logo_1.png">
+  <script src="https://cdn.lordicon.com/ritcuqlt.js"></script>
+  <script src="https://smtpjs.com/v3/smtp.js"></script>
+  <title>Mochileando</title>
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="Header" id="div-header">
+    </div>
+    <div class="Main">
+
+      <div class="itemTitulo">
+        <h1>Cont&aacutectenos</h1>
+      </div>
+      <div class="itemMapa">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3283.842117313388!2d-58.41668508490065!3d-34.60815366523961!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bccaf4e0109a5f%3A0xd18825eb15a0a422!2sAv.%20D%C3%ADaz%20V%C3%A9lez%203400%2C%20C1198%20CABA!5e0!3m2!1ses-419!2sar!4v1680996060106!5m2!1ses-419!2sar"
+          style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+          id="mapas"></iframe>
+      </div>
+      <form action=""  class="itemForm">
+        <div class="formus">
+          <label for="">Nombre</label>
+          <input id="fname" type="text" placeholder="Nombre" v-model="nombre">
+        </div>
+        <div class="formus">
+          <label for="">Apellido</label>
+          <input id="fapell" type="text" placeholder="Apellido" v-model="apellido">
+        </div>
+        <div class="formus">
+          <label for="fmail">Email</label>
+          <input id="fmail"type='email' placeholder="name@email" v-model="mail"> 
+        </div>
+        <div class="formus">
+          <label for="">Asunto</label>
+          <input id="fasunto" type="text" placeholder="Asunto" v-model="asunto">
+        </div>
+        <div class="formus">
+          <label for="msg">Mensaje</label>
+          <textarea name="msg" id="fmsg" rows="3" cols="20" placeholder="Envíenos sus comentarios" v-model="mensaje"></textarea>
+        </div>
+        <button type="button" onclick="save_formulario()" class="btn">
+          Enviar
+        </button>
+      </form>
+    </div>
+    <div class="Footer footer-content-wrapper" id="div-footer">
+    </div>
+  </div>
+  <script src="elements.js"></script>
+  <script src="index.js"></script>
+  <script src="contact.js"></script>
+</body>
+
+</html>
